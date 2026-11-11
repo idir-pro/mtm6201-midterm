@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Project</title>
+
+
+    <!-- The first link loads Lato and Karla, the fonts required for this assignment.
+     The second link connects my HTML to my CSS file so the styles apply to my page. -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+    <!-- This link lets keyboard users go straight
+      to the main content without going through the menu.
+     Press Tab to select it, then Enter to follow it
+     In CSS I will hide it and show it when it is selected with Tab -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+<!--  I group the logo and the About Us, Menu and Locations links in the header.
+     The logo links to index.html to return to the home page.
+     It is white, so it cannot be seen against the current white background.
+     In CSS, I will add a black background to the header to make it visible.
+     I will also use container to centre the content and limit its width,
+     then place the logo above the menu on tablet and mobile and beside it on desktop. -->
+<header>
+    <div class="container">
+        <a href="index.html">
+            <img src="images/my-coffee-shop-logo.svg" alt="My Coffee House">
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- The main content starts here.
+     The main-content ID lets the skip link lead directly to this area.
+     I used AI to help organise the provided content into sections,
+     with divs, headings, paragraphs, images and classes.
+     Classes let me select elements in CSS using a dot.
+     For example, class="hero" becomes .hero in CSS.
+     To change only the h1 inside this section, I can write:
+     .hero h1 { font-size: 40px; }
+     The image paths point to the files in my images folder.
+     I use the provided mockups to check the content and its organisation.
+     I use h1 for the main heading, h2 for section headings,
+     h3 for headings within those sections, and p for paragraphs.
+      Divs let me group elements together.
+     For example, <div class="gallery"> groups my five photos.
+     In CSS, I can select this group with .gallery and add display: grid;
+     to arrange the photos in columns.
+     I can also select elements inside this group.
+     For example, .gallery img selects all the images inside gallery,
+     so I can change their width together.
+     The src attribute tells the browser where to find an image.
+     For example, src="images/latte.jpeg" loads latte.jpeg from the images folder.
+     The alt attribute describes what the image shows for people who cannot see it.
+     For links, href="#menu" goes to the section with id="menu".
+     The class="button" lets me use .button in CSS to add a background,
+     padding and other styles that make the link look like a button. --> 
+<main id="main-content">
+    <section class="hero">
+    <div class="container">
+ <h1>Experience coffee like never before</h1>
+ <p>We craft more than beverages; we curate memories, one flavorful moment at a time.
+ Embrace the aroma and let every visit be a chapter in your coffee story.</p>
+<a href="#menu" class="button">Explore our menu</a>
+</div>
+</section>
+<section class="welcome">
+    <div class="container">
+        <p class="section-label">Welcome to My Coffee House</p>
+        <h2>Experience a new way to taste coffee</h2>
+
+        <div class="gallery">
+            <img src="images/latte.jpeg" alt="Milk being poured into a latte">
+            <img src="images/coffee-beans.jpeg" alt="Roasted coffee beans in a glass">
+            <img src="images/pouring-coffee.jpeg" alt="Coffee being poured into a glass pot">
+            <img src="images/three-cups.jpeg" alt="Three friends holding their coffee cups together">
+            <img src="images/smiling-employee.jpeg" alt="Smiling employee behind the coffee counter">
+ </div>
+    </div>
+</section>
+<section class="offers">
+    <div class="container">
+<p class="section-label">What we offer</p>
+<h2>Why visit us?</h2>
+
+     <div class="offers-list">
+     <div class="offer">
+
+
+        <!--I leave alt="" for these decorative icons because their headings
+     already provide the information. The screen reader skips the icons
+     and reads the headings to avoid repeating the same information. -->
+     <img src="images/fair-trade.svg" alt=""> 
+     <h3>Fair Trade Coffee</h3>
+       <p>We build direct relationships with the farmers and producers who help in the development of delicious, sustainable and organic coffee.</p>
+            </div>
+
+            <div class="offer">
+       <img src="images/local-baked-goods.svg" alt="">
+                <h3>Local baked goods</h3>
+      <p>We use local products to bake our goods and bring in a variety of treats from local bakers with our community.</p>
+            </div>
+
+            <div class="offer">
+                <img src="images/made-with-love.svg" alt="">
+                <h3>Made with love</h3>
+                <p>We value our customers and make it our priority to serve everyone with respect and a friendly smile to start their day of right.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="menu-locations">
+    <div class="container">
+        <section id="menu">
+      <p class="section-label">Our menu</p>
+            <h2>Explore what we have to offer you</h2>
+ <a href="#menu" class="button">Explore our menu</a>
+        </section>
+
+        <section id="locations">
+        
+            <p class="section-label">Locations</p>
+            <h2>Find your nearest coffee shop</h2>
+            <a href="#locations" class="button button-outline">View locations</a>
+        </section>
+    </div>
+</div>
+<section id="about" class="about">
+    <div class="container">
+        <img src="images/about-us.jpeg" alt="Two baristas preparing coffee together">
+
+        <div class="about-text">
+            <p class="section-label">About us</p>
+            <h2>Read our story</h2>
+
+            <p>In the heart of our community, My Coffee House emerged as a humble local coffee shop that sought to redefine the coffee experience. Founded with a passion for quality brews and a commitment to fostering genuine connections, we embarked on this journey with a vision to create a warm and inviting space for coffee enthusiasts and casual patrons alike.</p>
+
+            <p>My Coffee House quickly became a cherished gathering spot, where the rich aroma of freshly ground coffee beans mingled with the laughter of friends and the tapping of keyboards from those seeking a cozy workspace.</p>
+
+            <a href="#about" class="button button-dark">Learn more</a>
+        </div>
+    </div>
+</section>
+<section class="testimonials">
+    <div class="container">
+        <p class="section-label">Testimonials</p>
+        <h2>What our customers say about us</h2>
+
+        <div class="testimonials-list">
+            <div class="testimonial">
+
+
+                <!-- I add a description in alt so blind people using a screen reader
+                          can hear what the photo shows. -->
+                <img src="images/testimonial-1.jpeg" alt="Customer enjoying coffee">
+
+                <div class="testimonial-text">
+                    <p>"I always make a point to visit My Coffee Company when in Ottawa. Delicious coffee and friendly service."</p>
+                    <p class="customer-name">Jane D., Toronto</p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                    
+                <img src="images/testimonial-2.jpeg" alt="Smiling customer">
+
+                <div class="testimonial-text">
+                    <p>"Great atmosphere to get some work done while enjoying a cup or two of incredible coffee."</p>
+                    <p class="customer-name">Scott S., Ottawa</p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="images/testimonial-3.jpeg" alt="Customer enjoying his iced coffee">
+
+                <div class="testimonial-text">
+                    <p>"Best coffee in Ottawa and the service is top notch. Would highly recommend a visit."</p>
+                    <p class="customer-name">Susie F., Ottawa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+
+<!-- The footer contains the copyright at the bottom of the page. -->
+<footer>
+        <div class="container">
+        <p>&copy; My Coffee Company 2024</p>
+ </div>
+</footer>
+</body>
+
+</html>
