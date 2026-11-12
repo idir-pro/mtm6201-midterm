@@ -1,0 +1,103 @@
+/*her i remove the default spacing from HTML elements so I can choose my own spacing.
+   Padding and borders will be included in their defined dimensions  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  i use the colours given in the requirements so 
+   backgroundcolor makes the background beige and color makes the text black.
+   line-height: 1.5 sets the line height to 1.5 times the text size */
+body {
+    background-color: #f3f0e9;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* I select the container class using a dot(.)
+i limit container to 1200px as required in the assignment
+   margin: 0 auto centres the container horizontally
+   padding: 0 20px keeps 20px of space inside on the left and right */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* her  I selected all images with img.
+   max-width: 100% prevents them from exceeding their containing box,
+   but does not make them all the same size.
+   height: auto keeps their proportions, and display: block removes the small gap below images.
+   Later, I willset a specific width for a group using .offer img  for example */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* her iselect the list inside nav using nav ul.
+    none removes the bullets(.) before About Us, Menu and Locations. */
+nav ul {
+    list-style: none;
+}
+
+/*  HER i  use Karla for the text as required
+     (Karla will be used for all body text and buttons.) */
+
+body {
+    font-family: "Karla";
+}
+
+/*  i use Lato for headings and navigation, and Karla for body text and buttons as required.
+             (Lato will be used for all headings and navigation.)
+             fontweight 700 makes the text bold  */
+h1, h2, h3, nav {
+    font-family: "Lato";
+    font-weight: 700;
+}
+
+/* iselect all h1, h2 and h3 headings.
+   line-height: 1.1 sets the line height to 1.1 times the heading's font size.
+   This keeps the lines close when a heading takes more than one line.
+   text-transform: uppercase displays headings in capital letters
+   without changing the text written in my HTML. */
+h1, h2, h3 {
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+/*  I give the headings the mobile sizes recommended on this assignmnt.
+   Values in rem are based on the font size of html.
+   I will adjust these sizes in the tablet and desktop media queries. */
+h1 {
+    font-size: 2.027rem;
+}
+
+h2 {
+    font-size: 1.802rem;
+}
+
+h3 {
+    font-size: 1.424rem;
+}
+
+/***  har i select the header containing the logo and navigation
+   i add a black background to make the white logo visible
+   padding: 20px 0 adds 20px of inner space at the top and bottom,
+   and no inner space on the left and right. */
+header {
+    background-color: #000000;
+    padding: 20px 0;
+}
+
+/*  I select the div with the container class inside the header.
+   Flexbox in a column places the logo above the group of navigation links.
+   align-items: center centres these two elements horizontally.
+   gap: 20px adds 20px between the logo and the whole group (menu, about us and locations) */
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
