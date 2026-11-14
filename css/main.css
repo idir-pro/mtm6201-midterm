@@ -81,6 +81,10 @@ h2 {
 h3 {
     font-size: 1.424rem;
 }
+p {
+    font-size: 1rem;
+}
+
 
 /***  har i select the header containing the logo and navigation
    i add a black background to make the white logo visible
@@ -101,3 +105,600 @@ header .container {
     align-items: center;
     gap: 20px;
 }
+
+/*** I select the logo inside the header using header img.
+   i give it a width of 220px
+   The height: auto defined earlier in the img rule also applies to the logo
+   so its height adjusts to keep its proportions. */
+header img {
+    width: 220px;
+}
+
+/* i select the list containing About Us, Menu and Locations using nav ul.
+   display: flex places them side by side
+   gap: 25px leaves 25px between the list items. like 25 px betwen about us and the others */
+nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+/* i select the About Us, Menu and Locations links inside nav.
+   I make the text white and remove the underline.
+   i display them in capital letters with a font size of 0.875rem.
+   When their colour changes, the transition makes the change gradual
+   over 0.3 seconds instead of happening immediately ***/
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+}
+
+/**** i change the text colour of the About Us, Menu and Locations links.
+   :hover makes them gold when i move the pointer over them without clicking.
+   :focus also makes them gold when selected, for example with Tab.
+   :active make them brown while i hold the mouse button down on a link.
+   The previous transition makes the colour changes gradual. ****/
+nav a:hover,
+nav a:focus {
+    color: #d69e3d;
+}
+
+nav a:active {
+    color: #966f2c;
+}
+
+
+/* I select the Skip to main content link using .skip-link
+   position: absolute lets me move it without shifting the rest of the page
+   top: -100px hides it above the page
+   i give it a white background black text and inner spacing
+   When selected with Tab :focus changes top to 10px to show it
+   The user can then press Enter to go to the main content */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 15px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* I select the hero section with the heading, text and link.
+   i add a background photo  and transparent black over it to make the white text easier to read
+   (0, 0, 0 gives black and 0.6 means 60% opacity)
+   cover fills the section with the photo and center centres it.
+   i centre the text and leave 80px of space at the top and bottom.
+   I will style the link below using .button. */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/hero-background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+
+/** i select the heading and paragraph inside hero.
+   i limit the heading to 700px and the paragraph to 500px wide.
+   Using auto in margin centres their boxes
+   i leave 20px below the heading and 30px below the paragraph. *******/
+.hero h1 {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+
+/*** .button selects the Explore our menu, View locations and Learn more links.
+   display: inline-block lets me give them a box with padding.
+   i add a white background, a 2px white border and black text,
+   in bold capital letters without an underline (textdecoration;None)
+   text-align: center centres the text.
+   Padding adds 15px at the top and bottom, and 30px on the left and right.
+   no fixed width is set longer text makes a wider button
+   The transition makes background, text and border colour changes
+   gradual over 0.3 seconds */
+.button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* .button gives all button links shared styles,
+   with a white background and black text.
+   The Learn more link has both classes: button and button-dark.
+   .button-dark changes its background and border to black, and its text to white.
+   it keeps the padding and transition from .button */
+.button-dark {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* view locations has both the button and button-outline classes.
+   it keeps the padding, white border and transition from .button.
+ unlike the white background in .button, its background becomes transparent
+   so the photo behind it stays visible and its text becomes white */
+.button-outline {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/*  :hover applies when the pointer is over the button,
+   and :focus when it is selected, for example with Tab.
+   The background turns gold and the text black, with the 0.3-second transition.
+   The border keeps its previously defined colour.
+   View locations will have a separate rule to turn white. */
+.button:hover,
+.button:focus {
+    background-color: #d69e3d;
+    color: #000000;
+}
+
+
+
+/* .button:active changes the colours while I press a button link
+   the background and border turn gold, and the text turns black
+   the button keeps the padding and transition defined in .button */
+.button:active {
+    background-color: #d69e3d;
+    border-color: #d69e3d;
+    color: #000000;
+}
+
+/* .welcome selects the section with the welcome text,
+   heading and five photos. I add 60px of inner space
+   at the top and bottom of the section, and 0 on the sides */
+.welcome {
+    padding: 60px 0;
+}
+
+/* .section-label selects Welcome to My Coffee House, What we offer,
+   Our menu, Locations, About us and Testimonials.
+   i make them gold using #d69e3d and uppercase using text-transform: uppercase.
+   margin-bottom: 10px adds 10px of space below them, before the next heading */
+.section-label {
+    color: #d69e3d;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* .welcome h2 selects the heading Experience a new way to taste coffee.
+   i leave 25px below the heading before the gallery.
+   i limit its width to 600px to avoid a very long line. */
+.welcome h2 {
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+
+/* .gallery selects the div containing the five photos.
+   display: grid arranges them in a grid 1fr 1fr creates two equal columns, with 15px between columns and rows. */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+/* I make each image fill its cell with width and height set to 100%.
+   object-fit: cover prevents the photo from stretching:
+   it keeps its proportions and any overflowing parts are cropped. */
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .gallery img:first-child selects the image that is the first element
+   inside gallery. Here, it is latte.jpeg because it comes first in my HTML.
+   CSS selects its position, not its file name.
+   grid-column: 1 / 3 places it from grid line 1 to grid line 3,
+   so it spans both columns. */
+.gallery img:first-child {
+    grid-column: 1 / 3;
+}
+
+/* .offers selects the Why visit us? section, including Fair Trade Coffee,
+   Local baked goods and Made with love */
+.offers {
+    padding: 40px 0 60px;
+    text-align: center;
+}
+
+/*.offers h2 selects the Why visit us heading.
+   i leave 40px below it before the group containing
+   fair Trade Coffee Local baked goods and Made with love. */
+.offers h2 {
+    margin-bottom: 40px;
+}
+   
+
+/* .offers-list selects the group containing Fair Trade Coffee,
+   local baked goods and Made with love.
+   flexbox in a column stacks these three blocks on mobile.
+   gap: 40px leaves 40px between the complete blocks. */
+.offers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+/* .offer img selects the Fair Trade Coffee,
+   Local baked goods and Made with love icons.
+   i give them a width of 150px and centre them with auto side margins.
+   i leave 20px below each icon before its heading.
+   the height: auto defined in img keeps their proportions. */
+.offer img {
+    width: 150px; 
+    margin: 0 auto 20px;
+}
+
+/*  .offer h3 selects the Fair Trade Coffee,
+   Local baked goods and Made with love headings.
+   i leave 10px below each heading to separate it from its paragraph. */
+.offer h3 {
+    margin-bottom: 10px;
+}
+
+/* .offer p selects the paragraphs under Fair Trade Coffee,
+   Local baked goods and Made with love i limit their width to 350px
+    and centre their boxes with margin: 0 auto.
+     (The text is already centred by text-align: center in .offers.) */
+.offer p {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+
+/* .menu-locations selects the box containing Our menu,
+   explore what we have to offer you, Explore our menu, Locations,
+   find your nearest coffee shop and View locations.
+   i add one background photo with a black overlay at 60% opacity.
+   cover fills the area and center centres the photo.
+   i make the text white, centre it and add 60px at the top and bottom. */
+.menu-locations {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/coffee-shop.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* i select the container div inside menu-locations.
+   it contains the Our menu and Locations sections, each with its heading and button.
+   fflexbox in a column places Our menu above Locations.
+   gap: 60px adds space between the two complete sections. */
+.menu-locations .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+
+/* .menu-locations h2 selects Explore what we have to offer you
+   and Find your nearest coffee shop
+   i limit their width to 450px and centre their boxes using auto.
+   i leave 30px below each heading before its button. */
+.menu-locations h2 {
+    max-width: 450px;
+    margin: 0 auto 30px;
+}
+
+/* .about selects the section with the photo, About us,
+   Read our story, the paragraphs and the Learn more link.
+   i add 60px of inner space at the top and bottom of the section,
+   and 0 on the sides. */
+.about {
+    padding: 60px 0;
+}
+
+
+/* I select the container div inside the about section.
+   It contains the photo and the about-text group.
+   Flexbox in a column places the photo above the text on mobile.
+   gap: 25px leaves 25px between the photo and the text group. */
+.about .container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* .about img selects about-us.jpeg in the About us section.
+   width: 100% makes it fill its container's width on mobile.
+   The height: auto defined in img keeps its proportions. */
+.about img {
+    width: 100%;
+}
+/*  .about h2 selects the Read our story heading
+   i leave 15px below it to separate it from the first paragraph. */
+.about h2 {
+    margin-bottom: 15px;
+}
+
+/*  .about-text p selects About us and the two story paragraphs.
+   i leave 15px below each paragraph to space out the content.
+   For About us, this rule replaces the 10px from .section-label. */
+.about-text p {
+    margin-bottom: 15px; 
+}
+
+/* .about .button selects the Learn more link in the About us section.
+   i add a 10px top margin to separate it from the text above. */
+.about .button {
+    margin-top: 10px;
+}
+
+/* .testimonials selects the section with Jane, Scott and Susie's reviews,
+   including its heading and photos.
+   I use a black background and white text, except for text with its own colour.
+   I add 60px of inner space at the top and bottom, and 0 on the sides. */
+.testimonials {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+/*  .testimonials h2 selects What our customers say about us.
+   I limit its width to 650px and leave 30px below the heading
+   before Jane, Scott and Susie's review cards. */
+.testimonials h2 {
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* .testimonials-list selects the group of Jane, Scott and Susie's cards
+   Flexbox in a column stacks them on mobile.
+   gap: 20px leaves 20px between each complete card. */
+.testimonials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* .testimonial selects each of Jane, Scott and Susie's cards.
+   position: relative makes each card the reference for positioning its review.
+   This will let me place the text over its own photo. */
+.testimonial {
+    position: relative;
+}
+
+/* .testimonial img selects Jane, Scott and Susie's photos.
+   width: 100% makes each photo fill the width of its own card.
+   The height: auto defined in img keeps its proportions. */
+.testimonial img {
+    width: 100%;
+}
+
+/*** .testimonial-text selects the review and name inside each card.
+   position: absolute uses the card with position: relative as its reference.
+   bottom: 0 and left: 0 place the text at the bottom left of its photo.
+   The group fills the card's width, with 20px of inner spacing.
+   I add a black background at 70% opacity to make the text readable. */
+.testimonial-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* .customer-name selects Jane D., Toronto, Scott S., Ottawa
+   and Susie F. Ottawa. I display them in gold and capital letters,
+   with 10px above them to separate them from the reviews. */
+.customer-name {
+    color: #d69e3d;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/*I select the footer containing © My Coffee Company 2024.
+   I make the background black and the text white, centred horizontally.
+   padding-bottom: 30px adds 30px of inner space at the bottom. */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+/* footer p selects the © My Coffee Company 2024 paragraph.
+   I add a 1px white line above it and 20px between the line and the text.
+   . I set the font size to 1rem, which equals 16px when the root font size is 16px*/
+footer p {
+    border-top: 1px solid #ffffff;
+    padding-top: 20px;
+    font-size: 1rem;
+}
+
+/* This media query applies from a width of 768px.
+   I increase the h1, h2 and h3 headings to the tablet sizes
+   recommended.
+   Below 768px, the headings keep their mobile sizes. */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.986rem;
+    }
+
+    h2 {
+        font-size: 2.488rem;
+    }
+
+    h3 {
+        font-size: 1.728rem;
+    }
+    p  {
+        font-size: 1rem;
+    }
+
+/* From 768px, i increase hero's top and bottom padding from 80px to 100px
+   to give the content more space.
+   The side padding stays at 0. */
+    .hero {
+    padding: 100px 0;
+}
+
+/* I change the gallery to four equal columns.
+   The first photo, latte.jpeg, spans two columns and two rows on the left.
+   The other four photos sit on the right, two per row. */
+.gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.gallery img:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+/* On tablet, I place Fair Trade Coffee and Local baked goods
+   side by side using a grid with two equal columns.
+   .offer:last-child selects Made with love and makes it span both columns
+   on the next row. I keep the 40px gap defined above. */
+.offers-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.offer:last-child {
+    grid-column: 1 / 3;
+}
+
+/* From 768px, I place Our menu and Locations side by side
+   with flex-direction: row, keeping display: flex from the earlier rule.
+   i leave 30px between the two sections.
+   flex: 1 gives each section an equal share of the available width. */
+.menu-locations .container {
+    flex-direction: row;
+    gap: 30px;
+}
+
+.menu-locations section {
+    flex: 1;
+}
+
+/** From 768px, I place the About us photo and text group
+   side by side and centre them vertically.
+   I set the photo width to 50% and let about-text take the remaining space.
+   I keep the 25px gap defined earlier between the photo and text. */
+.about .container {
+    flex-direction: row;
+    align-items: center;
+}
+
+.about img {
+    width: 50%;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* From 768px, I place Jane, Scott and Susie's cards side by side.
+   flex: 1 shares the available width between the three cards.
+   min-width: 0 allows the cards to shrink within the row.
+      I reduce the review padding to 15px. */
+.testimonials-list {
+    flex-direction: row;
+}
+
+.testimonial {
+    flex: 1;
+    min-width: 0;
+}
+
+.testimonial-text {
+    padding: 15px;
+}
+}
+
+/* This media query applies from 1100px.
+   I replace the tablet sizes of h1, h2 and h3
+   with the desktop sizes recomnded  */
+
+@media (min-width: 1100px) {
+    h1 {
+        font-size: 3.815rem;
+    }
+
+    h2 {
+        font-size: 3.052rem;
+    }
+
+    h3 {
+        font-size: 1.953rem;
+    }
+    p  {
+        font-size: 1rem;
+    }
+
+
+
+/* From 1100px, I place the logo and navigation on the same row.
+   justify-content: space-between places the logo on the left and menu on the right.
+   The align-items: center defined earlier centres them vertically. */
+header .container {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* From 1100px, I increase hero's top and bottom padding from 100px to 160px
+   to give the section more height.
+   The side padding stays at 0. */
+.hero {
+    padding: 160px 0;
+}
+
+/* On desktop, I create three equal columns to place
+   Fair Trade Coffee, Local baked goods and Made with love side by side.
+   grid-column: auto removes the two-column span given to Made with love on tablet. */
+.offers-list {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.offer:last-child {
+    grid-column: auto;
+}
+}
+
+/* View locations turns white with black tex as shown in the YouTube video. */
+.button-outline:hover,
+.button-outline:focus {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
